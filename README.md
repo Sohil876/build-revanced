@@ -1,1 +1,3 @@
-# build-revanced
+### Build-ReVanced
+
+-  Non-Root Only (atm)

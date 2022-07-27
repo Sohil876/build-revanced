@@ -1,0 +1,37 @@
+name: Build
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+
+      - name: Fetch and build
+        env:
+          GHTOKEN: ${{ secrets.GHTOKEN }}
+        run: bash build.sh
+        shell: bash
+
+      - name: Upload apk
+        uses: actions/upload-artifact@v2
+        with:
+          name: revanced-nonroot
+          path: ./revanced.apk
+      - name: Upload patch log
+        uses: actions/upload-artifact@v2
+        with:
+          name: PatchLog
+          path: ./Patch.log
+
