@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up JDK
+      - name: Set up jdk
         uses: actions/setup-java@v2
         with:
           java-version: '17'
@@ -24,11 +24,17 @@ jobs:
         run: bash build.sh
         shell: bash
 
+      - name: Sign apk # https://github.com/tytydraco/public-keystore
+        run: |
+          apksigner="$(find $ANDROID_SDK_ROOT/build-tools -name apksigner | sort -r | head -n 1)"
+          "$apksigner" sign --ks public.jks --ks-key-alias public --ks-pass pass:public --key-pass pass:public --in ./revanced.apk --out ./revanced_signed.apk
+        shell: bash
+
       - name: Upload apk
         uses: actions/upload-artifact@v2
         with:
           name: revanced-nonroot
-          path: ./revanced.apk
+          path: ./revanced_signed.apk
       - name: Upload patch log
         uses: actions/upload-artifact@v2
         with:
