@@ -10,6 +10,8 @@ YOUTUBE_APK="youtube.apk"
 R_PATCHES="patches.jar"
 R_INTEGRATIONS="integrations.apk"
 R_CLI="revanced-cli*-all.jar"
+INCLUDE_PATCHES="-i enable-wide-searchbar" # -i patchname
+EXCLUDE_PATCHES="" # -e patchname
 source links.sh
 
 # Fetch files
@@ -47,5 +49,5 @@ echo ""
 echo "Patching youtube apk..."
 echo ""
 cd ${WRK_DIR}
-java -jar ${R_CLI} -a ${YOUTUBE_APK} -b ${R_PATCHES} -m ${R_INTEGRATIONS} -o revanced.apk -i enable-wide-searchbar -e force-vp9-codec -c 2>&1 | tee -a Patch.log
+java -jar ${R_CLI} -a ${YOUTUBE_APK} -b ${R_PATCHES} -m ${R_INTEGRATIONS} -o revanced.apk ${INCLUDE_PATCHES} ${EXCLUDE_PATCHES} -c 2>&1 | tee -a Patch.log
 
