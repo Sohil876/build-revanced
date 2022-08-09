@@ -1,0 +1,16 @@
+#
+## Config file
+#
+
+# Vars
+INCLUDE_PATCHES="-i enable-wide-searchbar" # -i patchname
+EXCLUDE_PATCHES="" # -e patchname
+# Build revanced cli/patcher from source and use it instead of prebuilts
+SOURCE_BUILD_CLI="false"
+
+# File links
+YOUTUBE_APK_URL="https://td.sohil876.workers.dev/0:/youtube_17.29.34.apk"
+R_PATCHES_URL="https://github.com/revanced/revanced-patches/releases/download/v2.33.2/revanced-patches-2.33.2.jar"
+R_INTEGRATIONS_URL="https://github.com/revanced/revanced-integrations/releases/download/v0.31.2/app-release-unsigned.apk"
+R_CLI_URL="https://github.com/revanced/revanced-cli/releases/download/v2.9.2/revanced-cli-2.9.2-all.jar"
+
