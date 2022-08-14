@@ -52,9 +52,9 @@ if [ "${SOURCE_BUILD_CLI}" = true ] || [ "${SOURCE_BUILD_CLI}" = True ] || [ "${
   cd ${WRK_DIR}/cli
   chmod +x gradlew
   ./gradlew clean build
-  cp build/libs/*-all.jar ${WRK_DIR}/
+  cp build/libs/${R_CLI} ${WRK_DIR}/
   # Remove locally published patcher
-  rm -rf ~/.m2/repository/app/revanced/*
+  rm -rf ~/.m2/repository/app/revanced
 fi
 
 # Patch revanced
