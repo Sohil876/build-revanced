@@ -11,7 +11,7 @@ SOURCE_BUILD_CLI="false"
 
 # File links
 YOUTUBE_APK_URL="https://td.sohil876.workers.dev/0:/youtube_17.29.34.apk"
-R_PATCHES_URL="https://github.com/revanced/revanced-patches/releases/download/v2.34.0/revanced-patches-2.34.0.jar"
-R_INTEGRATIONS_URL="https://github.com/revanced/revanced-integrations/releases/download/v0.32.0/app-release-unsigned.apk"
+R_PATCHES_URL="https://github.com/revanced/revanced-patches/releases/download/v2.37.0/revanced-patches-2.37.0.jar"
+R_INTEGRATIONS_URL="https://github.com/revanced/revanced-integrations/releases/download/v0.33.1/app-release-unsigned.apk"
 R_CLI_URL="https://github.com/revanced/revanced-cli/releases/download/v2.9.3/revanced-cli-2.9.3-all.jar"
 
