@@ -24,20 +24,31 @@ jobs:
         run: bash build.sh
         shell: bash
 
-      - name: Sign apk # https://github.com/tytydraco/public-keystore
+      - name: Sign apks # https://github.com/tytydraco/public-keystore
         run: |
           apksigner="$(find $ANDROID_SDK_ROOT/build-tools -name apksigner | sort -r | head -n 1)"
-          "$apksigner" sign --ks public.jks --ks-key-alias public --ks-pass pass:public --key-pass pass:public --in ./revanced.apk --out ./revanced_signed.apk
+          "$apksigner" sign --ks public.jks --ks-key-alias public --ks-pass pass:public --key-pass pass:public --in ./revanced.apk --out ./revanced_signed.apk && 
+          "$apksigner" sign --ks public.jks --ks-key-alias public --ks-pass pass:public --key-pass pass:public --in ./manager_flutter_release.apk --out ./revanced_manager_flutter_signed.apk
         shell: bash
 
-      - name: Upload apk
-        uses: actions/upload-artifact@v2
+      - name: Upload revanced patched apk
+        uses: actions/upload-artifact@v3
         with:
           name: revanced-nonroot
           path: ./revanced_signed.apk
+          if-no-files-found: error
+
+      - name: Upload revanced manager apk
+        uses: actions/upload-artifact@v3
+        with:
+          name: revanced-manager_flutter
+          path: ./revanced_manager_flutter_signed.apk
+          if-no-files-found: error
+
       - name: Upload patch log
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: PatchLog
           path: ./Patch.log
+          if-no-files-found: error
 

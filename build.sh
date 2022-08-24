@@ -26,6 +26,7 @@ else
   echo "Allowed values true/True/TRUE or false/False/FALSE"
   exit 1
 fi
+R_MANAGER_GIT_URL="https://github.com/revanced/revanced-manager"
 
 # Fetch files
 echo ""
@@ -73,4 +74,21 @@ echo "Patching youtube apk..."
 echo ""
 cd ${WRK_DIR}
 java -jar ${R_CLI} -a ${YOUTUBE_APK} -b ${R_PATCHES} -m ${R_INTEGRATIONS} -o revanced.apk ${INCLUDE_PATCHES} ${EXCLUDE_PATCHES} -c 2>&1 | tee -a Patch.log
+
+# Build revanced manager
+# Compose
+git clone ${R_MANAGER_GIT_URL} manager
+cd manager
+#chmod +x gradlew
+#./gradlew clean build
+#cp ${WRK_DIR}/
+#git reset --hard
+
+# Flutter:
+git checkout flutter
+sudo snap install flutter --classic # Install flutter
+flutter pub get # Setup flutter
+flutter packages pub run build_runner build --delete-conflicting-outputs # Generate files with Builder
+flutter build apk # Build with Flutter
+cp build/app/outputs/flutter-apk/app-release.apk ${WRK_DIR}/manager_flutter_release.apk
 
