@@ -11,8 +11,8 @@ INCLUDE_PATCHES="" # -i patchname
 EXCLUDE_PATCHES="" # -e patchname
 
 # Versions to fetch files for prebuilt from github releases
-R_PATCHES_VERSION="2.42.0"
-R_INTEGRATIONS_VERSION="0.36.0"
+R_PATCHES_VERSION="2.44.0"
+R_INTEGRATIONS_VERSION="0.36.4"
 R_CLI_VERSION="2.9.3"
 
 # File links
