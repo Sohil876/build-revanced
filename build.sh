@@ -79,16 +79,9 @@ java -jar ${R_CLI} -a ${YOUTUBE_APK} -b ${R_PATCHES} -m ${R_INTEGRATIONS} -o rev
 # Compose
 git clone ${R_MANAGER_GIT_URL} manager
 cd manager
-#chmod +x gradlew
-#./gradlew clean build
-#cp ${WRK_DIR}/
-#git reset --hard
-
-# Flutter:
-git checkout flutter
-sudo snap install flutter --classic # Install flutter
-flutter pub get # Setup flutter
-flutter packages pub run build_runner build --delete-conflicting-outputs # Generate files with Builder
-flutter build apk # Build with Flutter
-cp build/app/outputs/flutter-apk/app-release.apk ${WRK_DIR}/manager_flutter_release.apk
+git checkout compose
+chmod +x gradlew
+gradle wrapper
+./gradlew clean assembleDebug
+cp app/build/outputs/apk/debug/app-debug.apk ${WRK_DIR}/manager_compose_debug.apk
 

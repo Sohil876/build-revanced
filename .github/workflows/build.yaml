@@ -18,7 +18,7 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Fetch and build
+      - name: Fetch, build and patch
         env:
           GHTOKEN: ${{ secrets.GHTOKEN }}
         run: bash build.sh
@@ -28,7 +28,7 @@ jobs:
         run: |
           apksigner="$(find $ANDROID_SDK_ROOT/build-tools -name apksigner | sort -r | head -n 1)"
           "$apksigner" sign --ks public.jks --ks-key-alias public --ks-pass pass:public --key-pass pass:public --in ./revanced.apk --out ./revanced_signed.apk && 
-          "$apksigner" sign --ks public.jks --ks-key-alias public --ks-pass pass:public --key-pass pass:public --in ./manager_flutter_release.apk --out ./revanced_manager_flutter_signed.apk
+          "$apksigner" sign --ks public.jks --ks-key-alias public --ks-pass pass:public --key-pass pass:public --in ./manager_compose_debug.apk --out ./revanced_manager_compose_signed.apk
         shell: bash
 
       - name: Upload revanced patched apk
@@ -41,8 +41,8 @@ jobs:
       - name: Upload revanced manager apk
         uses: actions/upload-artifact@v3
         with:
-          name: revanced-manager_flutter
-          path: ./revanced_manager_flutter_signed.apk
+          name: revanced-manager_compose
+          path: ./revanced_manager_compose_signed.apk
           if-no-files-found: error
 
       - name: Upload patch log
