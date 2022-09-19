@@ -10,25 +10,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up jdk
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v3
         with:
-          java-version: '17'
           distribution: 'adopt'
+          java-version: '17'
 
-      - name: Fetch, build and patch
+      - name: Fetch, clone
+        env:
+          GHTOKEN: ${{ secrets.GHTOKEN }}
+        run: bash fetch.sh
+        shell: bash
+
+      - name: Source build
         env:
           GHTOKEN: ${{ secrets.GHTOKEN }}
         run: bash build.sh
         shell: bash
 
-      - name: Sign apks # https://github.com/tytydraco/public-keystore
-        run: |
-          apksigner="$(find $ANDROID_SDK_ROOT/build-tools -name apksigner | sort -r | head -n 1)"
-          "$apksigner" sign --ks public.jks --ks-key-alias public --ks-pass pass:public --key-pass pass:public --in ./revanced.apk --out ./revanced_signed.apk && 
-          "$apksigner" sign --ks public.jks --ks-key-alias public --ks-pass pass:public --key-pass pass:public --in ./manager_compose_debug.apk --out ./revanced_manager_compose_signed.apk
+      - name: Patch apk
+        run: bash patch.sh
+        shell: bash
+
+      - name: Sign apks
+        run: bash sign.sh
         shell: bash
 
       - name: Upload revanced patched apk
@@ -43,7 +50,7 @@ jobs:
         with:
           name: revanced-manager_compose
           path: ./revanced_manager_compose_signed.apk
-          if-no-files-found: error
+          if-no-files-found: ignore
 
       - name: Upload patch log
         uses: actions/upload-artifact@v3

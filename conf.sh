@@ -3,8 +3,9 @@
 #
 
 # Vars
-# Build revanced cli/patcher from source and use it instead of prebuilts
+# Build from source and use it instead of prebuilts
 SOURCE_BUILD_CLI="false"
+SOURCE_BUILD_MANAGER="true"
 
 # Explictly include/exclude patches
 INCLUDE_PATCHES="" # -i patchname
