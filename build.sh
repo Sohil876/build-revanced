@@ -7,14 +7,9 @@
 source conf.sh # Load conf file
 export GITHUB_TOKEN=${GHTOKEN}
 WRK_DIR=$(pwd)
-# File names
-YOUTUBE_APK="youtube.apk"
-R_PATCHES="patches.jar"
-R_INTEGRATIONS="integrations.apk"
-R_CLI="revanced-cli-*-all.jar"
 
 # Build
-if [ "${SOURCE_BUILD_CLI}" = true ] || [ "${SOURCE_BUILD_CLI}" = True ] || [ "${SOURCE_BUILD_CLI}" = TRUE ]; then
+if [ "${SOURCE_BUILD_CLI^^}" = TRUE ]; then
   # Build patcher
   echo ""
   echo "Source build enabled!"
@@ -37,7 +32,7 @@ if [ "${SOURCE_BUILD_CLI}" = true ] || [ "${SOURCE_BUILD_CLI}" = True ] || [ "${
 fi
 
 # Build revanced manager
-if [ "${SOURCE_BUILD_MANAGER}" = true ] || [ "${SOURCE_BUILD_MANAGER}" = True ] || [ "${SOURCE_BUILD_MANAGER}" = TRUE ]; then
+if [ "${SOURCE_BUILD_MANAGER^^}" = TRUE ]; then
   # Compose
   cd ${WRK_DIR}/manager
   git checkout compose

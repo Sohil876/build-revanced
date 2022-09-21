@@ -5,11 +5,6 @@
 
 # Vars (DO NOT CHANGE!)
 source conf.sh # Load conf file
-# File names
-YOUTUBE_APK="youtube.apk"
-R_PATCHES="patches.jar"
-R_INTEGRATIONS="integrations.apk"
-R_CLI="revanced-cli-*-all.jar"
 
 # Patch revanced
 echo ""
