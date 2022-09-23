@@ -31,14 +31,3 @@ if [ "${SOURCE_BUILD_CLI^^}" = TRUE ]; then
   rm -rf ~/.m2/repository/app/revanced
 fi
 
-# Build revanced manager
-if [ "${SOURCE_BUILD_MANAGER^^}" = TRUE ]; then
-  # Compose
-  cd ${WRK_DIR}/manager
-  git checkout compose
-  chmod +x gradlew
-  gradle wrapper
-  ./gradlew clean assembleDebug
-  cp app/build/outputs/apk/debug/app-debug.apk ${WRK_DIR}/manager_compose_debug.apk
-fi
-
