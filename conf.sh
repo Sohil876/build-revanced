@@ -5,7 +5,7 @@ SOURCE_BUILD_CLI="false"
 SOURCE_BUILD_MANAGER="false"
 # Explictly include/exclude patches
 INCLUDE_PATCHES="" # -i patchname
-EXCLUDE_PATCHES="" # -e patchname
+EXCLUDE_PATCHES="-e hide-time-and-seekbar" # -e patchname
 # Versions to fetch files for prebuilt from github releases
 R_PATCHES_VERSION="2.68.2"
 R_INTEGRATIONS_VERSION="0.42.1"
