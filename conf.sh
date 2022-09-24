@@ -6,7 +6,7 @@ SOURCE_BUILD_CLI="false"
 INCLUDE_PATCHES="" # -i patchname
 EXCLUDE_PATCHES="" # -e patchname
 # Versions to fetch files for prebuilt from github releases
-R_PATCHES_VERSION="2.68.2"
+R_PATCHES_VERSION="2.68.3"
 R_INTEGRATIONS_VERSION="0.42.1"
 R_CLI_VERSION="2.11.2"
 # File links
