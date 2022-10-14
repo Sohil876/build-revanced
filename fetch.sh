@@ -21,7 +21,7 @@ else
   exit 1
 fi
 if [ "${SOURCE_BUILD_MANAGER^^}" = TRUE ]; then
-  R_MANAGER_GIT_URL="https://github.com/revanced/revanced-manager"
+  R_MANAGER_GIT_URL="https://github.com/revanced/revanced-manager-compose"
 fi
 
 # Fetch files

@@ -49,7 +49,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: revanced-manager_compose
-          path: ./revanced_manager_compose_signed.apk
+          path: ./revanced_manager_compose_signed-debug.apk
           if-no-files-found: ignore
 
       - name: Upload patch log

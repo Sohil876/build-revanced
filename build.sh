@@ -33,9 +33,7 @@ fi
 
 # Build revanced manager
 if [ "${SOURCE_BUILD_MANAGER^^}" = TRUE ]; then
-  # Compose
   cd ${WRK_DIR}/manager
-  git checkout compose
   chmod +x gradlew
   gradle wrapper
   ./gradlew clean assembleDebug

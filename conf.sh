@@ -2,7 +2,7 @@
 ## Vars
 # Build from source and use it instead of prebuilts
 SOURCE_BUILD_CLI="false"
-SOURCE_BUILD_MANAGER="false"
+SOURCE_BUILD_MANAGER="true" # (Compose)
 # Explictly include/exclude patches
 INCLUDE_PATCHES="" # -i patchname
 EXCLUDE_PATCHES="" # -e patchname
