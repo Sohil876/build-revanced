@@ -20,6 +20,9 @@ else
   echo "Allowed values true/True/TRUE or false/False/FALSE"
   exit 1
 fi
+if [ "${SOURCE_BUILD_MANAGER^^}" = TRUE ]; then
+  R_MANAGER_GIT_URL="https://github.com/revanced/revanced-manager"
+fi
 
 # Fetch files
 echo ""
@@ -37,5 +40,8 @@ else
   echo "Invalid value in SOURCE_BUILD_CLI var!"
   echo "Allowed values true/True/TRUE or false/False/FALSE"
   exit 1
+fi
+if [ "${SOURCE_BUILD_MANAGER^^}" = TRUE ]; then
+  git clone ${R_MANAGER_GIT_URL} manager
 fi
 
