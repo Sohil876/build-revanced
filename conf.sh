@@ -7,8 +7,8 @@ SOURCE_BUILD_MANAGER="false" # (Compose)
 INCLUDE_PATCHES="" # -i patchname
 EXCLUDE_PATCHES="" # -e patchname
 # Versions to fetch files for prebuilt from github releases
-R_PATCHES_VERSION="2.104.2"
-R_INTEGRATIONS_VERSION="0.67.2"
+R_PATCHES_VERSION="2.106.1"
+R_INTEGRATIONS_VERSION="0.68.0"
 R_CLI_VERSION="2.15.0"
 Y_APK_VERSION="17.42.35"
 # File links
