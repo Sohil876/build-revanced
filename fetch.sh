@@ -8,7 +8,7 @@ source conf.sh # Load conf file
 export GITHUB_TOKEN=${GHTOKEN}
 # Prebuilt file links, configure versions in conf.sh file
 R_PATCHES_URL="https://github.com/revanced/revanced-patches/releases/download/v${R_PATCHES_VERSION}/revanced-patches-${R_PATCHES_VERSION}.jar"
-R_INTEGRATIONS_URL="https://github.com/revanced/revanced-integrations/releases/download/v${R_INTEGRATIONS_VERSION}/app-release-unsigned.apk"
+R_INTEGRATIONS_URL="https://github.com/revanced/revanced-integrations/releases/download/v${R_INTEGRATIONS_VERSION}/revanced-integrations-${R_INTEGRATIONS_VERSION}.apk"
 if [ "${SOURCE_BUILD_CLI^^}" = FALSE ]; then
   R_CLI_URL="https://github.com/revanced/revanced-cli/releases/download/v${R_CLI_VERSION}/revanced-cli-${R_CLI_VERSION}-all.jar"
 elif [ "${SOURCE_BUILD_CLI^^}" = TRUE ]; then
