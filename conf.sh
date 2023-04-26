@@ -7,10 +7,10 @@ SOURCE_BUILD_MANAGER="false" # (Compose)
 INCLUDE_PATCHES="" # -i patchname
 EXCLUDE_PATCHES="" # -e patchname
 # Versions to fetch files for prebuilt from github releases
-R_PATCHES_VERSION="2.168.0"
-R_INTEGRATIONS_VERSION="0.102.0"
+R_PATCHES_VERSION="2.170.0"
+R_INTEGRATIONS_VERSION="0.104.0"
 R_CLI_VERSION="2.20.1"
-Y_APK_VERSION="18.05.40"
+Y_APK_VERSION="18.15.40"
 # File links
 YOUTUBE_APK_URL="https://td.sohil876.workers.dev/1:/ReVanced/youtube_${Y_APK_VERSION}.apk"
 ###
