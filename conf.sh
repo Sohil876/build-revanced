@@ -10,7 +10,7 @@ EXCLUDE_PATCHES="" # -e patchname
 R_PATCHES_VERSION="2.173.0"
 R_INTEGRATIONS_VERSION="0.107.0"
 R_CLI_VERSION="2.21.0"
-Y_APK_VERSION="18.15.40"
+Y_APK_VERSION="18.16.37"
 # File links
 YOUTUBE_APK_URL="https://td.sohil876.workers.dev/1:/ReVanced/youtube_${Y_APK_VERSION}.apk"
 ###
