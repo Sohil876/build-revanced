@@ -52,26 +52,10 @@ jobs:
           path: ./revanced_manager_compose_signed-debug.apk
           if-no-files-found: ignore
 
-      - name: Send revanced patched apk to telegram
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          CHAT_ID: ${{ secrets.CHAT_ID }}
-        run: |
-          curl -X POST -H "content-type: multipart/form-data" -F document=@"./revanced_signed.apk" -F chat_id=${CHAT_ID} https://api.telegram.org/bot${BOT_TOKEN}/sendDocument
-        shell: bash
-
       - name: Upload patch log
         uses: actions/upload-artifact@v3
         with:
           name: PatchLog
           path: ./Patch.log
           if-no-files-found: error
-
-      - name: Send revanced patch log to telegram
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          CHAT_ID: ${{ secrets.CHAT_ID }}
-        run: |
-          curl -X POST -H "content-type: multipart/form-data" -F document=@"./Patch.log" -F chat_id=${CHAT_ID} https://api.telegram.org/bot${BOT_TOKEN}/sendDocument
-        shell: bash
 
