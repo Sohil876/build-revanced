@@ -4,4 +4,4 @@
 
 ### Non-Root Only
 
--   Youtube : [18.19.35](https://www.apkmirror.com/apk/google-inc/youtube/youtube-18-19-35-release/)
+-   Youtube : [18.23.35](https://www.apkmirror.com/apk/google-inc/youtube/youtube-18-23-35-release/)
