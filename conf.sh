@@ -4,8 +4,8 @@
 SOURCE_BUILD_CLI="false"
 SOURCE_BUILD_MANAGER="false" # (Compose)
 # Explictly include/exclude patches
-INCLUDE_PATCHES="" # -i patchname
-EXCLUDE_PATCHES="" # -e patchname
+INCLUDE_PATCHES="-i custom-branding" # -i some-patch-name, typically its same as patchname on revanced git/site just all lowercase with space replaced by "-" symbol.
+EXCLUDE_PATCHES="" # -e some-patch-name, typically its same as patchname on revanced git/site just all lowercase with space replaced by "-" symbol.
 # Versions to fetch files for prebuilt from github releases
 R_PATCHES_VERSION="2.189.0"
 R_INTEGRATIONS_VERSION="0.117.0"
