@@ -7,9 +7,9 @@ SOURCE_BUILD_MANAGER="false" # (Compose)
 INCLUDE_PATCHES="-i custom-branding" # -i some-patch-name, typically its same as patchname on revanced git/site just all lowercase with space replaced by "-" symbol.
 EXCLUDE_PATCHES="" # -e some-patch-name, typically its same as patchname on revanced git/site just all lowercase with space replaced by "-" symbol.
 # Versions to fetch files for prebuilt from github releases
-R_PATCHES_VERSION="2.193.0"
-R_INTEGRATIONS_VERSION="0.119.1"
-R_CLI_VERSION="4.0.1"
+R_PATCHES_VERSION="2.194.0"
+R_INTEGRATIONS_VERSION="0.119.2"
+R_CLI_VERSION="4.0.2"
 Y_APK_VERSION="18.38.44"
 # File links
 YOUTUBE_APK_URL="https://td.sohil876.workers.dev/1:/ReVanced/youtube_${Y_APK_VERSION}.apk"
