@@ -7,8 +7,8 @@ SOURCE_BUILD_MANAGER="false" # (Compose)
 INCLUDE_PATCHES="-i custom-branding" # -i some-patch-name, typically its same as patchname on revanced git/site just all lowercase with space replaced by "-" symbol.
 EXCLUDE_PATCHES="" # -e some-patch-name, typically its same as patchname on revanced git/site just all lowercase with space replaced by "-" symbol.
 # Versions to fetch files for prebuilt from github releases
-R_PATCHES_VERSION="2.201.0"
-R_INTEGRATIONS_VERSION="0.124.0"
+R_PATCHES_VERSION="2.201.1"
+R_INTEGRATIONS_VERSION="0.124.1"
 R_CLI_VERSION="4.2.0"
 Y_APK_VERSION="18.45.41"
 # File links
