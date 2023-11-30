@@ -4,8 +4,10 @@
 SOURCE_BUILD_CLI="false"
 SOURCE_BUILD_MANAGER="false" # (Compose)
 # Explictly include/exclude patches
-INCLUDE_PATCHES="-i custom-branding" # -i some-patch-name, typically its same as patchname on revanced git/site just all lowercase with space replaced by "-" symbol.
-EXCLUDE_PATCHES="" # -e some-patch-name, typically its same as patchname on revanced git/site just all lowercase with space replaced by "-" symbol.
+# You can get index of patch from patches.json using jq:
+# jq 'map(.name == "Custom branding") | index(true)' < patches.json
+INCLUDE_PATCHES="--ii 34" # --ii patchindex, 34 is Custom branding.
+EXCLUDE_PATCHES="" # --ie patchindex.
 # Versions to fetch files for prebuilt from github releases
 R_PATCHES_VERSION="2.201.1"
 R_INTEGRATIONS_VERSION="0.124.1"
