@@ -9,10 +9,10 @@ SOURCE_BUILD_MANAGER="false" # (Compose)
 INCLUDE_PATCHES="--ii 34" # --ii patchindex, 34 is Custom branding.
 EXCLUDE_PATCHES="" # --ie patchindex.
 # Versions to fetch files for prebuilt from github releases
-R_PATCHES_VERSION="2.201.1"
-R_INTEGRATIONS_VERSION="0.124.1"
-R_CLI_VERSION="4.2.0"
-Y_APK_VERSION="18.45.41"
+R_PATCHES_VERSION="2.202.0"
+R_INTEGRATIONS_VERSION="0.125.0"
+R_CLI_VERSION="4.3.0"
+Y_APK_VERSION="18.45.43"
 # File links
 YOUTUBE_APK_URL="https://td.sohil876.workers.dev/1:/ReVanced/youtube_${Y_APK_VERSION}.apk"
 ###
