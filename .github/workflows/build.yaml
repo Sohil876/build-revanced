@@ -1,61 +1,60 @@
 name: CI
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3
+        steps:
+            - uses: actions/checkout@v4
 
-      - name: Set up jdk
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'zulu'
-          java-version: '11'
+            - name: Set up jdk
+              uses: actions/setup-java@v4
+              with:
+                  distribution: "zulu"
+                  java-version: "11"
 
-      - name: Fetch, clone
-        env:
-          GHTOKEN: ${{ secrets.GHTOKEN }}
-        run: bash fetch.sh
-        shell: bash
+            - name: Fetch, clone
+              env:
+                  GHTOKEN: ${{ secrets.GHTOKEN }}
+              run: bash fetch.sh
+              shell: bash
 
-      - name: Source build
-        env:
-          GHTOKEN: ${{ secrets.GHTOKEN }}
-        run: bash build.sh
-        shell: bash
+            - name: Source build
+              env:
+                  GHTOKEN: ${{ secrets.GHTOKEN }}
+              run: bash build.sh
+              shell: bash
 
-      - name: Patch apk
-        run: bash patch.sh
-        shell: bash
+            - name: Patch apk
+              run: bash patch.sh
+              shell: bash
 
-      - name: Sign apks
-        run: bash sign.sh
-        shell: bash
+            - name: Sign apks
+              run: bash sign.sh
+              shell: bash
 
-      - name: Upload revanced patched apk
-        uses: actions/upload-artifact@v3
-        with:
-          name: revanced-nonroot
-          path: ./revanced_signed.apk
-          if-no-files-found: error
+            - name: Upload revanced patched apk
+              uses: actions/upload-artifact@v4
+              with:
+                  name: revanced-nonroot
+                  path: ./revanced_signed.apk
+                  if-no-files-found: error
 
-      - name: Upload revanced manager apk
-        uses: actions/upload-artifact@v3
-        with:
-          name: revanced-manager_compose
-          path: ./revanced_manager_compose_signed-debug.apk
-          if-no-files-found: ignore
+            - name: Upload revanced manager apk
+              uses: actions/upload-artifact@v4
+              with:
+                  name: revanced-manager_compose
+                  path: ./revanced_manager_compose_signed-debug.apk
+                  if-no-files-found: ignore
 
-      - name: Upload patch log
-        uses: actions/upload-artifact@v3
-        with:
-          name: PatchLog
-          path: ./Patch.log
-          if-no-files-found: error
-
+            - name: Upload patch log
+              uses: actions/upload-artifact@v4
+              with:
+                  name: PatchLog
+                  path: ./Patch.log
+                  if-no-files-found: error
