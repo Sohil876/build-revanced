@@ -6,13 +6,13 @@ SOURCE_BUILD_MANAGER="false" # (Compose)
 # Explictly include/exclude patches
 # You can get index of patch from patches.json using jq:
 # jq 'map(.name == "Custom branding") | index(true)' < patches.json
-INCLUDE_PATCHES="--ii 78" # --ii patchindex.
+INCLUDE_PATCHES="--ii 75" # --ii patchindex.
 EXCLUDE_PATCHES="" # --ie patchindex.
 # Versions to fetch files for prebuilt from github releases
-R_PATCHES_VERSION="3.2.0"
-R_INTEGRATIONS_VERSION="1.1.0"
+R_PATCHES_VERSION="4.2.0"
+R_INTEGRATIONS_VERSION="1.3.2"
 R_CLI_VERSION="4.4.0"
-Y_APK_VERSION="18.45.43"
+Y_APK_VERSION="19.04.37"
 # File links
 YOUTUBE_APK_URL="https://td.sohil876.workers.dev/1:/ReVanced/youtube_${Y_APK_VERSION}.apk"
 ###
